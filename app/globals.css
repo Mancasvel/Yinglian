@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+:root {
+  --yl-bg: #050506;
+  --yl-surface: #0a0a0d;
+  --yl-surface-2: #101018;
+  --yl-border: rgba(255, 255, 255, 0.08);
+  --yl-text: #f4f4f5;
+  --yl-muted: #9b9ba8;
+  --yl-faint: #5b5b66;
+  --yl-violet: #7c6afc;
+  --yl-violet-soft: rgba(124, 106, 252, 0.14);
+  --yl-cyan: #2dd4bf;
+  --yl-cyan-soft: rgba(45, 212, 191, 0.12);
+  --yl-grid: rgba(255, 255, 255, 0.04);
+}
+
+@theme inline {
+  --font-sans: var(--font-dm-sans), var(--font-noto-sc), ui-sans-serif, system-ui,
+    sans-serif;
+  --color-yl-bg: var(--yl-bg);
+  --color-yl-surface: var(--yl-surface);
+  --color-yl-surface-2: var(--yl-surface-2);
+  --color-yl-text: var(--yl-text);
+  --color-yl-muted: var(--yl-muted);
+  --color-yl-faint: var(--yl-faint);
+  --color-yl-violet: var(--yl-violet);
+  --color-yl-cyan: var(--yl-cyan);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--yl-bg);
+  color: var(--yl-text);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--yl-violet-soft);
+  color: var(--yl-text);
+}
+
+@keyframes yl-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes yl-soft-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+.animate-yl-in {
+  animation: yl-fade-up 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-yl-delay-1 {
+  animation-delay: 0.08s;
+}
+.animate-yl-delay-2 {
+  animation-delay: 0.16s;
+}
+.animate-yl-delay-3 {
+  animation-delay: 0.24s;
+}
+.animate-yl-delay-4 {
+  animation-delay: 0.32s;
+}
+.animate-yl-delay-5 {
+  animation-delay: 0.4s;
+}
+
+.animate-yl-glow {
+  animation: yl-soft-pulse 5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-yl-in,
+  .animate-yl-glow {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+.yl-grid-bg {
+  background-image:
+    linear-gradient(to right, var(--yl-grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--yl-grid) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 20%, transparent 75%);
+}
+
+.yl-glass {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  border: 1px solid var(--yl-border);
+  backdrop-filter: blur(14px);
+}
