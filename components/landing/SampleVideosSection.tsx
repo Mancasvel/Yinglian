@@ -17,7 +17,7 @@ const samples = [
     title: "Social campaign video",
     description: "Sharp edits and confident rhythm, tuned for performance across key social surfaces.",
     image:
-      "https://images.unsplash.com/photo-1523275335684-3783b10b4fa4?auto=format&fit=crop&w=1200&q=85",
+      "https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=1200&q=85",
   },
 ];
 
